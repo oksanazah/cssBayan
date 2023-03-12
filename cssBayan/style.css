@@ -1,0 +1,154 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Archivo', sans-serif;
+	background-color: #e7e7e7;
+}
+
+h1 {
+	font-size: 3em;
+	font-weight: 900;
+	color: #000000;
+	margin-top: 1em;
+	margin-bottom: 0.5em;
+}
+
+input {
+	display: none;
+}
+
+label {
+	cursor: pointer;
+	display: block;
+}
+
+img {
+	height: 25em;
+	width: 100%;
+	object-fit: contain;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	padding: 0 4vh;
+	width: 100%;
+	height: 100vh;
+	align-items: center;
+}
+
+.item {
+	cursor: pointer;
+	padding-top: 0.5em;
+	width: 80vw;
+}
+
+.item:active .title {
+	color: #1a51e7;
+}
+
+.item:active .img {
+	opacity: 0.7;
+}
+
+.item i {
+	display: none;
+}
+
+.item-text {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.img {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 0;
+	overflow: hidden;
+	transition: height 1s ease-in-out;
+	margin-bottom: 0.5em;
+	margin-top: 0.8em;
+	border-radius: 0.5em;
+}
+
+.line {
+	display: block;
+	width: 100%;
+	height: 0.2em;
+	background-color: #cacaca;
+	margin-bottom: 1em;
+	border-radius: 0.3em;
+	transition: background-color 1s ease-in-out;
+}
+
+.title {
+	font-size: 1.5em;
+	font-weight: 600;
+	padding-top: 0.1em;
+	padding-bottom: 0.1em;
+	text-align: center;
+	color: #1a51e7;
+}
+
+input[id^='item-']:checked ~ .img {
+	height: 25em;
+}
+
+input:checked ~ .item-text i {
+	transition: 1s ease;
+	transform: rotate(-90deg);
+}
+
+input:checked ~ .item-text span {
+	color: #000;
+}
+
+@media (min-width: 820px) {
+	h1 {
+		font-size: 4em;
+	}
+
+	.title {
+		font-size: 1.8em;
+	}
+}
+
+@media (max-width: 320px) {
+	h1 {
+		font-size: 2em;
+	}
+
+	.title {
+		font-size: 1.2em;
+	}
+
+	input[id^='item-']:checked ~ .img {
+		height: 18em;
+	}
+}
+
+@media (hover: hover) {
+	.item:hover i {
+		transition: 1s ease;
+		transform: rotate(-90deg);
+	}
+
+	.item:hover .img {
+		height: 25em;
+	}
+
+	.accordion:hover i {
+		display: block;
+	}
+
+	.accordion:hover span {
+		color: #000;
+	}
+}
