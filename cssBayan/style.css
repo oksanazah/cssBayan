@@ -10,7 +10,7 @@ body {
 }
 
 h1 {
-	font-size: 4vw;
+	font-size: 2.5em;
 	font-weight: 900;
 	color: #000000;
 	margin-top: 1em;
@@ -47,8 +47,16 @@ img {
 	padding-top: 0.5em;
 }
 
+.item:active .title {
+	color: #1a51e7;
+}
+
+.item:active .img {
+	opacity: 0.7;
+}
+
 .item i {
-	transition: 1s ease-in-out;
+	display: none;
 }
 
 .item-text {
@@ -85,6 +93,7 @@ img {
 	padding-top: 0.1em;
 	padding-bottom: 0.1em;
 	text-align: center;
+	color: #1a51e7;
 }
 
 input[id^='item-']:checked ~ .img {
@@ -96,6 +105,10 @@ input:checked ~ .item-text i {
 	transform: rotate(-90deg);
 }
 
+input:checked ~ .item-text span {
+	color: #000;
+}
+
 @media (hover: hover) {
 	.item:hover i {
 		transition: 1s ease;
@@ -104,5 +117,13 @@ input:checked ~ .item-text i {
 
 	.item:hover .img {
 		height: 25em;
+	}
+
+	.accordion:hover i {
+		display: block;
+	}
+
+	.accordion:hover span {
+		color: #000;
 	}
 }
