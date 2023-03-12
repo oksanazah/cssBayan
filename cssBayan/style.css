@@ -45,6 +45,7 @@ img {
 .item {
 	cursor: pointer;
 	padding-top: 0.5em;
+	width: 80vw;
 }
 
 .item:active .title {
@@ -115,7 +116,7 @@ input:checked ~ .item-text span {
 	}
 
 	.title {
-		font-size: 2em;
+		font-size: 1.8em;
 	}
 }
 
